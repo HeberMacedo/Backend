@@ -1,0 +1,23 @@
+1- criar pasta REACT
+2- criar projeto teste: aula
+	2.1- comando: npx create-react-app aula
+3- precisa inicializar o projeto aula: cd aula | npm start
+
+
+CRIAR O PROJETO
+4- criar a pasta projeto | pasta server | arquivo index.js
+5- instalar um pacote para dar refresh no servidor automaticamento: npm i nodemon
+6- fazer as alterações do arquivo package.json
+7- no arquivo index.js criar a rota de acesso e teste do servidor
+8- chamar o navegador através da rota e disparar a mensagem para a tela 
+	8.1- instalar o express: npm i express
+9- instalar as dependências do banco de dados (mysql): npm add mysql2 express cors nodemon
+10- testar o servidor; npm run dev
+
+Criar o cliente
+11- criar um novo terminal
+12- criar cliente: npx create-react-app cliente
+	12.1- iniciar a pasta: cd cliente | npm start
+13- alterar arquivo css: cliente | src | index.css
+14- alterar o arquivo index.js
+15- criar o banco de dados

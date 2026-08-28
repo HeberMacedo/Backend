@@ -1,0 +1,21 @@
+Correção no Componente CadastroAluno.js: Adicionada a prevenção de comportamento padrão (e.preventDefault()) no evento de envio do formulário para evitar o recarregamento indesejado da página e garantir o envio correto via Axios.
+
+Correção no Componente ListaAlunos.js: Substituição do uso de índices (index) por identificadores únicos (aluno.id) nas chaves do mapeamento (key), garantindo estabilidade de performance e correta manipulação de estado pelo React.
+
+Ajustes no Servidor server.js:
+
+Inclusão do parâmetro (req, res) que estava faltando na rota POST /register.
+
+Adição do envio de resposta (res.json(...)) na rota /register para que o Axios receba o retorno de sucesso e finalize a requisição adequadamente.
+
+Configuração do servidor para rodar na porta correta (3000) em alinhamento com as requisições do frontend.
+
+Configuração da conexão com o MySQL utilizando o start do mysql2 integrada com o XAMPP
+
+Resolução de Dependências e Arquivos do Node:
+
+Instalação dos pacotes necessários (express, mysql2, cors) via npm na pasta do backend.
+
+Ajuste no script do arquivo package.json para que o comando npm start execute o arquivo de entrada corretamente.
+
+Além disso: fazer o npm instal para o cliente e servidor

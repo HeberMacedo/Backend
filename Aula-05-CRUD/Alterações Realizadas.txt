@@ -1,0 +1,19 @@
+Eu corrigi o envio do formulário adicionando event.preventDefault(), para evitar que a página recarregasse quando eu clicasse no botão de cadastrar. Também ajustei a requisição do Axios para enviar os dados de nome e idade para o servidor pela rota POST /register, usando a porta 3001.
+
+Alterações no componente ListaAlunos.js:
+Eu configurei a listagem para buscar os alunos através da rota GET /listar. Também mantive as funções de edição e exclusão utilizando o id de cada aluno. Para editar, é utilizada a rota PUT /editar/:id, e para excluir, a rota DELETE /excluir/:id. Também organizei a exibição para deixar o nome e a idade um embaixo do outro.
+
+Alterações no arquivo server.js:
+Eu corrigi a rota POST /register para receber os parâmetros (req, res), porque era necessário utilizar req.body para pegar o nome e a idade enviados pelo front-end. Também adicionei uma resposta com res.json(...) depois do cadastro, para que o Axios consiga saber quando a operação foi concluída corretamente.
+
+Configuração das portas:
+Eu deixei o React funcionando na porta 3000 e o servidor Node/Express na porta 3001. As requisições feitas pelo Axios foram configuradas para acessar o servidor pela porta 3001.
+
+Configuração do MySQL:
+Eu configurei a conexão utilizando o pacote mysql2 junto com o MySQL do XAMPP. Durante os testes, percebi que o MySQL estava funcionando na porta 3307, então alterei a configuração do server.js, que antes estava utilizando a porta 3306.
+
+Instalação das dependências:
+Quando tentei iniciar o servidor, apareceu um erro informando que o módulo express não estava instalado. Para resolver, executei npm install dentro da pasta servidor. O mesmo comando também deve ser executado na pasta client quando for necessário instalar as dependências do front-end.
+
+Resultado das alterações:
+Depois dessas correções, o projeto passou a conseguir cadastrar, listar, editar e excluir alunos, fazendo a comunicação entre o React, o servidor Express e o banco MySQL corretamente.

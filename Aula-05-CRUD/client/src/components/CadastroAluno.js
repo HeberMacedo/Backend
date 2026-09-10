@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Axios from "axios";
 
 // Defina o componente CadastroAluno.
-function CadastroAluno() {
+function CadastroAluno({ onCadastroSucesso }) {
   // Defina os estados iniciais para 'values'.
   const [values, setValues] = useState({ nome: '', idade: '' });
 
@@ -23,11 +23,15 @@ function CadastroAluno() {
   e.preventDefault(); // Impede o recarregamento padrão da página
 
   // Faça uma solicitação POST para a URL especificada com os dados do aluno.
-  Axios.post("http://localhost:3000/register", {
+  Axios.post("http://localhost:3001/register", {
     nome: values.nome,
     idade: values.idade
   }).then((response) => { //mudar sintaxe para adicionar a resposta com os dados
     console.log("Cadastrado com sucesso:", response.data); // Exiba a resposta da solicitação no console.
+    setValues({ nome: '', idade: '' });
+    if (onCadastroSucesso) {
+      onCadastroSucesso();
+    }
   }).catch((error) => {
     console.error("Erro no envio:", error);
   });
